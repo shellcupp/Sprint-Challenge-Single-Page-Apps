@@ -31,22 +31,38 @@ export default function WelcomePage() {
     <section className="welcome-page">
       <header>
         <h1>Welcome to the Ultimate Fan Site!</h1>
-        <Funimg src="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-  alt = "Alien Rick" / > < Funimg src =
-            "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-  alt = "Morty" / > < Funimg src =
-            "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
-  alt = "Summer" / > < Funimg src =
-            "https://rickandmortyapi.com/api/character/avatar/4.jpeg"
-  alt = "Beth" / > < Funimg src =
-            "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
-  alt = "Jerry" / > < Funimg src =
-            "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-  alt = "Rick" / > < Funimg src =
-            "https://rickandmortyapi.com/api/character/avatar/14.jpeg"
-  alt = "alien Morty" / > < Funimg src =
-            "https://rickandmortyapi.com/api/character/avatar/17.jpeg"
-      alt="Annie" />
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
+          alt="Alien Rick"
+        />{" "}
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+          alt="Morty"
+        />{" "}
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+          alt="Summer"
+        />{" "}
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/4.jpeg"
+          alt="Beth"
+        />{" "}
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+          alt="Jerry"
+        />{" "}
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+          alt="Rick"
+        />{" "}
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/14.jpeg"
+          alt="alien Morty"
+        />{" "}
+        <Funimg
+          src="https://rickandmortyapi.com/api/character/avatar/17.jpeg"
+          alt="Annie"
+        />
       </header>
     </section>
   );
