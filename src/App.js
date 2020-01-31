@@ -1,13 +1,34 @@
-import React from "react";
-import Header from "./components/Header.js";
-import WelcomePage from "./components/WelcomePage.js";
+import React from 'react';
+import WelcomePage from './components/WelcomePage';
+import SearchForm from "./components/SearchForm.js";
+import {Route, NavLink, Switch} from 'react-router-dom';
+import CharacterList from './components/CharacterList';
+import styled from 'styled-components';
 
+const NavDiv = styled.div`
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
 
 export default function App() {
   return (
     <main>
-      <WelcomePage />
-      <CharacterCard />
+ <NavDiv>
+    <NavLink to='/'> Home </NavLink>
+    <NavLink to ='/search-form'> Search for Character</NavLink>
+</NavDiv>
+  <Switch>
+      <Route path='/characters'>
+          <CharacterList />
+        </Route>
+        <Route path='/search-form'>
+          <SearchForm />
+        </Route>
+        <Route exact path='/'>
+        <WelcomePage/>
+        </Route>
+      </Switch>
     </main>
   );
 }
