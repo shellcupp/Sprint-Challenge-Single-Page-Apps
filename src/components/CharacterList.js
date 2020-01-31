@@ -8,7 +8,6 @@ const [character, setCharacter] = useState([]);
 const [query, setQuery] = useState("");
 
   useEffect(() => {
-    
     Axios.get(`https://rickandmortyapi.com/api/character/`)
     .then(response => {
       const data = response.data;
