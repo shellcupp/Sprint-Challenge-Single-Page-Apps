@@ -7,8 +7,8 @@ height: 35vh;
   margin: 0%, auto;
   object-fit: fill;
   animation-name: stretch;
-  animation-duration: 10s; 
-  animation-timing-function: ease-out; 
+  animation-duration: 10s;
+  animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
   animation-iteration-count: infinite;
@@ -22,7 +22,7 @@ height: 35vh;
   }
   100% {
     transform: scale(1);
-    
+
   }
 `;
 
