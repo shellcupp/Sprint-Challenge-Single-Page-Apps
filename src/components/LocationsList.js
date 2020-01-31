@@ -1,42 +1,35 @@
-import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import React, {useEffect, useState} from "react";
+
 import LocationCard from "./LocationCard";
 
 export default function LocationsList() {
 
-const [location, setLocation] = useState([]);
-const [query, setQuery] = useState("");
+  const [location, setLocation] = useState([]);
+  const [query, setQuery] = useState("");
 
-useEffect(() => {
-  axios
-    .get(`https://rickandmortyapi.com/api/location/`)
-    .then(response => {
+  useEffect(() => {
+    axios.get(`https://rickandmortyapi.com/api/location/`).then(response => {
       const data = response.data;
       console.log(response);
-      const result = data.filter(location =>
-        location.location
-          .toLowerCase()
-          .includes(query.toLowerCase())
-      );
+      const result =
+          data.filter(location => location.location.toLowerCase().includes(
+                          query.toLowerCase()));
       setCharacter(result);
     });
-}, [query]);
+  }, [ query ]);
 
-const handleInputChange = event => {
-  setQuery(event.target.value);
-};
+  const handleInputChange = event => { setQuery(event.target.value); };
 
 return (
     <div>
       <form>
         <input
-          type="text"
-          onChange={handleInputChange}
-          value={query}
-          name="name"
-          tabIndex="0"
-          className="prompt search-name"
-          placeholder="search by name"
+type = "text"
+onChange = {handleInputChange} value = {query} name = "name"
+tabIndex = "0"
+className = "prompt search-name"
+placeholder = "search by name"
           autoComplete="off"
         />
       </form>
@@ -50,7 +43,8 @@ return (
               residents={location.residents}
               />
           );
-        })}
-      </div>
+})
+}
+< /div>
   );
 }

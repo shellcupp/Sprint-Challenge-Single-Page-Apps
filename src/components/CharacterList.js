@@ -1,40 +1,35 @@
-import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import React, {useEffect, useState} from "react";
+
 import CharacterCard from "./CharacterCard"
 
 export default function CharacterList() {
- 
-const [character, setCharacter] = useState([]);
-const [query, setQuery] = useState("");
+
+  const [character, setCharacter] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    Axios.get(`https://rickandmortyapi.com/api/character/`)
-    .then(response => {
+    Axios.get(`https://rickandmortyapi.com/api/character/`).then(response => {
       const data = response.data;
       console.log(response);
-      const result = data.filter(character =>
-        character.character
-        .toLowerCase()
-        .includes(query.toLowerCase()));
-        setCharacter(result);
+      const result =
+          data.filter(character => character.character.toLowerCase().includes(
+                          query.toLowerCase()));
+      setCharacter(result);
     });
-  }, [query]);
+  }, [ query ]);
 
-  const handleInputChange = event => {
-    setQuery(event.target.value);
-  };
+  const handleInputChange = event => { setQuery(event.target.value); };
 
   return (
    <section>
   <form>
     <input
-      type="text"
-      onChange={handleInputChange}
-      value={query}
-      name="name"
-      tabIndex="0"
-      className="prompt search-name"
-      placeholder="search by name"
+  type = "text"
+  onChange = {handleInputChange} value = {query} name = "name"
+  tabIndex = "0"
+  className = "prompt search-name"
+  placeholder = "search by name"
       autoComplete="off"
     />
   </form>
@@ -51,7 +46,8 @@ const [query, setQuery] = useState("");
           
           />
         );
-      })}
-    </section>
+})
+}
+< /section>
   );
 }

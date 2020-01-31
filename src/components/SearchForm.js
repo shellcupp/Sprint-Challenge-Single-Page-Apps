@@ -1,30 +1,27 @@
-import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import React, {useEffect, useState} from "react";
+
 import CharacterCard from "./CharacterCard";
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  useEffect(() => {
-    Axios.get('https://rickandmortyapi.com/api/character/')
-    .then(res => {
-      console.log(res.data.results)
-      const characters = res.data.results.filter(char =>
-        char.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-        setSearchResults(characters);
-    })
-    .catch(err => {
-      console.log('No data', err);
-    })
-  }, [searchTerm]);
-   
-   
-   const handleChange = e => {
-     console.log(e.target.value)
-     setSearchTerm(e.target.value);
-   };
+  useEffect(() => {Axios.get('https://rickandmortyapi.com/api/character/')
+                       .then(res => {
+                         console.log(res.data.results)
+                         const characters = res.data.results.filter(
+                             char => char.name.toLowerCase().includes(
+                                 searchTerm.toLowerCase()));
+                         setSearchResults(characters);
+                       })
+                       .catch(err => { console.log('No data', err); })},
+            [ searchTerm ]);
+
+  const handleChange = e => {
+    console.log(e.target.value)
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <section className="search-form">
@@ -50,9 +47,9 @@ export default function SearchForm() {
          gender={char.gender}
          status={char.status}
          />
-       })}
-      </ul>
-      </div>
-    </section>
+})
+}
+</ul>
+      </div>< /section>
   );
 }

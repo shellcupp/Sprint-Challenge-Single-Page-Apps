@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function LocationCard(props) {
-  const { name, type, dimension, residents } = props;
+  const {name, type, dimension, residents} = props;
 
   return (
 <div>

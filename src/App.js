@@ -1,10 +1,11 @@
 import React from 'react';
-import WelcomePage from './components/WelcomePage';
-import SearchForm from "./components/SearchForm.js";
-import {Route, NavLink, Switch} from 'react-router-dom';
-import CharacterList from './components/CharacterList';
+import {NavLink, Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
+
+import CharacterList from './components/CharacterList';
 import LocationSearch from "./components/LocationSearch";
+import SearchForm from "./components/SearchForm.js";
+import WelcomePage from './components/WelcomePage';
 
 const NavDiv = styled.div`
   display:flex;

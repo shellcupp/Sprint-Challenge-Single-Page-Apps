@@ -1,30 +1,27 @@
-import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import React, {useEffect, useState} from "react";
+
 import LocationCard from "./LocationCard";
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  useEffect(() => {
-    Axios.get('https://rickandmortyapi.com/api/location/')
-    .then(res => {
-      console.log(res.data.results)
-      const location = res.data.results.filter(loc =>
-        loc.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-        setSearchResults(location);
-    })
-    .catch(err => {
-      console.log('No data', err);
-    })
-  }, [searchTerm]);
-   
-   
-   const handleChange = e => {
-     console.log(e.target.value)
-     setSearchTerm(e.target.value);
-   };
+  useEffect(() => {Axios.get('https://rickandmortyapi.com/api/location/')
+                       .then(res => {
+                         console.log(res.data.results)
+                         const location = res.data.results.filter(
+                             loc => loc.name.toLowerCase().includes(
+                                 searchTerm.toLowerCase()));
+                         setSearchResults(location);
+                       })
+                       .catch(err => { console.log('No data', err); })},
+            [ searchTerm ]);
+
+  const handleChange = e => {
+    console.log(e.target.value)
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <section className="location-search">
@@ -50,9 +47,9 @@ export default function SearchForm() {
          residents={loc.residents}
          
          />
-       })}
-      </ul>
-      </div>
-    </section>
+})
+}
+</ul>
+      </div>< /section>
   );
 }
